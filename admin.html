@@ -1,28 +1,46 @@
-<div class="container">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin</title>
 
-<h1>Admin Panel</h1>
+<link rel="stylesheet" href="style.css">
 
-<div id="loginBox" class="card">
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Passwort">
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
 
-<button class="primary" onclick="login()">Login</button>
-<button class="secondary" onclick="loginGoogle()">Google Login</button>
+</head>
+
+<body>
+
+<div class="app">
+
+<h1>Admin</h1>
+
+<div class="card">
+  <input id="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button class="btn" onclick="login()">Login</button>
 </div>
 
-<div id="pinBox" class="card hidden">
-<input id="pinInput" placeholder="PIN">
-<button class="primary" onclick="checkPin()">Weiter</button>
+<div class="card">
+  <input id="pinInput" placeholder="PIN">
+  <button class="btn" onclick="checkPin()">Weiter</button>
 </div>
 
-<div id="setPinBox" class="card hidden">
-<input id="newPin" placeholder="Neuer PIN">
-<button class="primary" onclick="savePin()">Speichern</button>
+<div class="card">
+  <input id="newPin" placeholder="Neuer PIN">
+  <button class="btn" onclick="savePin()">Speichern</button>
 </div>
 
-<div id="panel" class="card hidden">
-<h2>Kalender</h2>
-<div id="calendar"></div>
+<div class="card">
+  <h3>Kalender</h3>
+  <div id="calendar"></div>
 </div>
 
 </div>
+
+<script src="admin.js"></script>
+
+</body>
+</html>
