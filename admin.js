@@ -69,7 +69,21 @@ function renderCalendar(events){
     {
       initialView: 'dayGridMonth',
       locale: 'de',
-      events: events
+      height: 500,
+      headerToolbar: {
+        left: 'prev',
+        center: 'title',
+        right: 'next'
+      },
+      events: events,
+
+      eventColor: '#000',
+      eventTextColor: '#fff',
+
+      eventDidMount: function(info) {
+        info.el.style.borderRadius = "10px";
+        info.el.style.padding = "3px";
+      }
     }
   );
 
