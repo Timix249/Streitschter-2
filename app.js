@@ -1,12 +1,9 @@
 function show(id){
-
   document.querySelectorAll(".screen").forEach(s=>{
     s.classList.remove("active");
   });
-
   document.getElementById(id).classList.add("active");
 }
-
 
 function save(){
 
@@ -20,7 +17,12 @@ function save(){
     return;
   }
 
-  alert("Termin gespeichert ✅");
+  db.collection("termine").add({
+    name,
+    klasse,
+    date,
+    pause
+  });
 
-  // Firebase тут додасте пізніше
+  alert("Gespeichert ✅");
 }
