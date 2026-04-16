@@ -1,31 +1,26 @@
 function show(id){
 
-  document.querySelectorAll(".card").forEach(el=>{
-    el.classList.add("hidden");
+  document.querySelectorAll(".screen").forEach(s=>{
+    s.classList.remove("active");
   });
 
-  const el = document.getElementById(id);
-  el.classList.remove("hidden");
-
-  el.style.animation = "none";
-  el.offsetHeight;
-  el.style.animation = "fadeUp 0.4s ease";
+  document.getElementById(id).classList.add("active");
 }
+
 
 function save(){
 
-  db.collection("termine").add({
-    name: document.getElementById("name").value,
-    klasse: document.getElementById("klasse").value,
-    date: document.getElementById("date").value,
-    pause: document.getElementById("pause").value,
-    room: "Raum 008"
-  });
+  const name = document.getElementById("name").value;
+  const klasse = document.getElementById("klasse").value;
+  const date = document.getElementById("date").value;
+  const pause = document.getElementById("pause").value;
 
-  alert("Termin gespeichert!");
-}
+  if(!name || !klasse || !date){
+    alert("Bitte alles ausfüllen");
+    return;
+  }
 
-// PWA
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
+  alert("Termin gespeichert ✅");
+
+  // Firebase тут додасте пізніше
 }
