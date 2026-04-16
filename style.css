@@ -95,3 +95,30 @@ input, select {
 #calendar {
   margin-top: 10px;
 }
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* NAV */
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.nav button {
+  background: none;
+  border: none;
+  font-size: 16px;
+}
