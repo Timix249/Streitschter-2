@@ -4,20 +4,14 @@
 
 <div class="container">
 
-  <div class="card">
-    <button class="primary" onclick="show('home')">Info</button>
-    <button class="secondary" onclick="show('photos')">Fotos</button>
-    <button class="secondary" onclick="show('termin')">Termin</button>
-  </div>
-
   <div id="home" class="card">
     <p>Hier helfen wir bei Konflikten.</p>
     <p><b>Raum 008</b></p>
   </div>
 
   <div id="photos" class="card hidden">
-    <div style="height:120px;background:#ddd;border-radius:10px;margin-bottom:10px;"></div>
-    <div style="height:120px;background:#ddd;border-radius:10px;"></div>
+    <div style="height:120px;background:#ddd;border-radius:12px;margin-bottom:10px;"></div>
+    <div style="height:120px;background:#ddd;border-radius:12px;"></div>
   </div>
 
   <div id="termin" class="card hidden">
@@ -35,6 +29,13 @@
 
   </div>
 
+</div>
+
+<!-- NAV -->
+<div class="nav">
+  <button onclick="show('home')">🏠</button>
+  <button onclick="show('photos')">📷</button>
+  <button onclick="show('termin')">📅</button>
 </div>
 
 </body>
