@@ -1,106 +1,79 @@
-bbody {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: #f2f2f7;
+body {
   margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont;
+  background: #f2f2f7;
 }
 
-h1 {
-  text-align: center;
-  margin: 20px 0;
-}
-
-.container {
+/* APP */
+.app {
   max-width: 420px;
   margin: auto;
+  padding: 20px;
   padding-bottom: 90px;
 }
 
-/* CARDS */
-.card {
-  background: white;
-  border-radius: 20px;
-  padding: 16px;
-  margin: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-  transform: translateY(20px);
-  opacity: 0;
-  animation: fadeUp 0.4s ease forwards;
+/* TEXT */
+h1 {
+  text-align: center;
 }
 
-@keyframes fadeUp {
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.subtitle {
+  text-align: center;
+  color: gray;
+  margin-bottom: 20px;
 }
 
-/* BUTTONS */
-button {
-  width: 100%;
-  padding: 14px;
-  border-radius: 14px;
-  border: none;
-  font-size: 16px;
-  margin-top: 10px;
-  transition: 0.2s;
-}
-
-button:active {
-  transform: scale(0.97);
-}
-
-.primary {
-  background: black;
-  color: white;
-}
-
-.secondary {
-  background: #e5e5ea;
-}
-
-/* INPUTS */
-input, select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 10px;
-  border-radius: 12px;
-  border: 1px solid #ddd;
-}
-
-/* HIDE */
-.hidden {
-  display: none;
-}
-
-/* BOTTOM NAV */
-.nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  border-top: 1px solid #ddd;
-}
-
-.nav button {
-  background: none;
-  font-size: 14px;
-}
-
-/* CALENDAR STYLE */
-#calendar {
-  margin-top: 10px;
-}
+/* SCREENS */
 .screen {
   display: none;
 }
 
 .screen.active {
   display: block;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 16px;
+  margin-bottom: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+}
+
+/* PHOTOS */
+.photos {
+  display: flex;
+  gap: 10px;
+}
+
+.photo {
+  flex: 1;
+  height: 120px;
+  background: #ddd;
+  border-radius: 12px;
+}
+
+/* INPUT */
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* BUTTON */
+.btn {
+  width: 100%;
+  margin-top: 15px;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: black;
+  color: white;
+  font-size: 16px;
 }
 
 /* NAV */
