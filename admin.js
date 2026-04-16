@@ -1,8 +1,6 @@
 let calendar;
 
-// 🔐 ПРИ ЗАВАНТАЖЕННІ
 window.onload = function(){
-
   let pin = localStorage.getItem("pin");
 
   if(pin){
@@ -11,7 +9,6 @@ window.onload = function(){
   }
 };
 
-// 🔐 LOGIN
 function login(){
   auth.signInWithEmailAndPassword(email.value, password.value)
   .then(()=>{
@@ -21,34 +18,26 @@ function login(){
   .catch(()=>alert("Login Fehler"));
 }
 
-// 🔐 SAVE PIN
 function savePin(){
   localStorage.setItem("pin", newPin.value);
-  document.getElementById("setPinBox").classList.add("hidden");
   openPanel();
 }
 
-// 🔐 CHECK PIN
 function checkPin(){
-  let pin = localStorage.getItem("pin");
-
-  if(pinInput.value === pin){
+  if(pinInput.value === localStorage.getItem("pin")){
     openPanel();
   } else {
     alert("Falscher PIN");
   }
 }
 
-// 🚀 OPEN PANEL
 function openPanel(){
   document.getElementById("pinBox").classList.add("hidden");
   document.getElementById("panel").classList.remove("hidden");
   load();
 }
 
-// 📆 LOAD DATA
 function load(){
-
   db.collection("termine").onSnapshot(snapshot=>{
 
     let events = [];
@@ -58,11 +47,7 @@ function load(){
       let t = doc.data();
 
       let div = document.createElement("div");
-      div.innerHTML = `
-        <b>${t.name}</b> (${t.klasse})<br>
-        ${t.date} - ${t.pause}<br>
-        Raum 008
-      `;
+      div.innerHTML = `${t.name} (${t.klasse}) - ${t.date}`;
       list.appendChild(div);
 
       events.push({
@@ -75,7 +60,6 @@ function load(){
   });
 }
 
-// 📆 CALENDAR
 function renderCalendar(events){
 
   if(calendar) calendar.destroy();
