@@ -28,7 +28,6 @@ h1 {
 .screen {
   display: none;
 }
-
 .screen.active {
   display: block;
 }
@@ -36,10 +35,10 @@ h1 {
 /* CARD */
 .card {
   background: white;
-  border-radius: 24px;
+  border-radius: 26px;
   padding: 18px;
   margin-bottom: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.05);
 }
 
 /* PHOTOS */
@@ -47,12 +46,11 @@ h1 {
   display: flex;
   gap: 10px;
 }
-
 .photo {
   flex: 1;
   height: 120px;
   background: #e5e5ea;
-  border-radius: 18px;
+  border-radius: 20px;
 }
 
 /* INPUT */
@@ -60,27 +58,31 @@ input, select {
   width: 100%;
   padding: 14px;
   margin-top: 10px;
-  border-radius: 18px;
+  border-radius: 20px;
   border: none;
   background: #f2f2f7;
   font-size: 16px;
 }
 
-/* BUTTON */
+/* BUTTONS */
 .btn {
   width: 100%;
   margin-top: 15px;
   padding: 16px;
+  border-radius: 28px;
   border: none;
-  border-radius: 22px;
-  background: black;
-  color: white;
   font-size: 16px;
   transition: 0.2s;
 }
 
 .btn:active {
   transform: scale(0.96);
+}
+
+/* COLORS */
+.primary {
+  background: #007aff;
+  color: white;
 }
 
 .secondary {
@@ -91,16 +93,16 @@ input, select {
 /* NAV */
 .nav {
   position: fixed;
-  bottom: 10px;
-  left: 10px;
-  right: 10px;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
   height: 70px;
   background: white;
-  border-radius: 30px;
+  border-radius: 35px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
 }
 
 .nav button {
