@@ -47,7 +47,11 @@ function renderCalendar(events){
     {
       initialView: 'dayGridMonth',
       locale: 'de',
-      events: events
+      events: events,
+
+      dateClick: function(info) {
+        openDay(info.dateStr);
+      }
     }
   );
 
