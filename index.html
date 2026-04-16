@@ -8,10 +8,13 @@
 
 <body>
 
+<div class="app">
+
 <h1>Streitschlichter</h1>
 <p class="subtitle">Raum 008</p>
 
 <!-- SCREENS -->
+
 <div id="info" class="screen active">
   <div class="card">
     Hier helfen wir bei Konflikten.
@@ -28,21 +31,23 @@
 <div id="termin" class="screen">
   <div class="card">
 
-    <input placeholder="Name">
-    <input placeholder="Klasse">
-    <input type="date">
+    <input id="name" placeholder="Name">
+    <input id="klasse" placeholder="Klasse">
+    <input type="date" id="date">
 
-    <select>
+    <select id="pause">
       <option>1. Pause</option>
       <option>2. Pause</option>
     </select>
 
-    <button class="btn">Termin buchen</button>
+    <button class="btn" onclick="save()">Termin buchen</button>
 
   </div>
 </div>
 
-<!-- NAVIGATION -->
+</div>
+
+<!-- NAV -->
 <div class="nav">
   <button onclick="show('info')">Info</button>
   <button onclick="show('photos')">Fotos</button>
