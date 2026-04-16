@@ -57,3 +57,41 @@ function renderCalendar(events){
 
   calendar.render();
 }
+function openDay(date){
+
+  document.getElementById("modalDate").innerText = date;
+  const list = document.getElementById("modalList");
+  list.innerHTML = "";
+
+  db.collection("termine")
+    .where("date", "==", date)
+    .get()
+    .then(snapshot=>{
+
+      if(snapshot.empty){
+        list.innerHTML = "<p>Keine Termine</p>";
+        return;
+      }
+
+      snapshot.forEach(doc=>{
+        const d = doc.data();
+
+        const div = document.createElement("div");
+        div.innerHTML = `
+          <b>${d.name}</b><br>
+          Klasse: ${d.klasse}<br>
+          ${d.pause}
+          <hr>
+        `;
+
+        list.appendChild(div);
+      });
+
+    });
+
+  document.getElementById("dayModal").classList.remove("hidden");
+}
+
+function closeModal(){
+  document.getElementById("dayModal").classList.add("hidden");
+}
