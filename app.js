@@ -1,6 +1,15 @@
 function show(id){
-  document.querySelectorAll("section").forEach(s=>s.classList.add("hidden"));
-  document.getElementById(id).classList.remove("hidden");
+
+  document.querySelectorAll(".card").forEach(el=>{
+    el.classList.add("hidden");
+  });
+
+  const el = document.getElementById(id);
+  el.classList.remove("hidden");
+
+  el.style.animation = "none";
+  el.offsetHeight;
+  el.style.animation = "fadeUp 0.4s ease";
 }
 
 function save(){
