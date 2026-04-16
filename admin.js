@@ -6,12 +6,8 @@ function login(){
   const password = document.getElementById("password").value;
 
   auth.signInWithEmailAndPassword(email, password)
-    .then(()=>{
-      loadData();
-    })
-    .catch(err=>{
-      alert(err.message);
-    });
+    .then(()=> loadData())
+    .catch(err=> alert(err.message));
 }
 
 function googleLogin(){
@@ -19,12 +15,8 @@ function googleLogin(){
   const provider = new firebase.auth.GoogleAuthProvider();
 
   auth.signInWithPopup(provider)
-    .then(()=>{
-      loadData();
-    })
-    .catch(err=>{
-      alert(err.message);
-    });
+    .then(()=> loadData())
+    .catch(err=> alert(err.message));
 }
 
 function loadData(){
@@ -61,16 +53,3 @@ function renderCalendar(events){
 
   calendar.render();
 }
-
-document.addEventListener("DOMContentLoaded", ()=>{
-
-  calendar = new FullCalendar.Calendar(
-    document.getElementById("calendar"),
-    {
-      initialView: 'dayGridMonth'
-    }
-  );
-
-  calendar.render();
-
-});
