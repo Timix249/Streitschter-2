@@ -1,30 +1,40 @@
-body {
+bbody {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   background: #f2f2f7;
   margin: 0;
-  padding: 0;
 }
 
 h1 {
   text-align: center;
-  margin-top: 20px;
-  font-size: 28px;
+  margin: 20px 0;
 }
 
 .container {
-  max-width: 400px;
+  max-width: 420px;
   margin: auto;
-  padding: 20px;
+  padding-bottom: 90px;
 }
 
+/* CARDS */
 .card {
   background: white;
   border-radius: 20px;
-  padding: 15px;
-  margin-top: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  padding: 16px;
+  margin: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeUp 0.4s ease forwards;
 }
 
+@keyframes fadeUp {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* BUTTONS */
 button {
   width: 100%;
   padding: 14px;
@@ -32,6 +42,11 @@ button {
   border: none;
   font-size: 16px;
   margin-top: 10px;
+  transition: 0.2s;
+}
+
+button:active {
+  transform: scale(0.97);
 }
 
 .primary {
@@ -43,11 +58,40 @@ button {
   background: #e5e5ea;
 }
 
+/* INPUTS */
 input, select {
   width: 100%;
   padding: 12px;
   margin-top: 10px;
   border-radius: 12px;
   border: 1px solid #ddd;
-  font-size: 15px;
+}
+
+/* HIDE */
+.hidden {
+  display: none;
+}
+
+/* BOTTOM NAV */
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ddd;
+}
+
+.nav button {
+  background: none;
+  font-size: 14px;
+}
+
+/* CALENDAR STYLE */
+#calendar {
+  margin-top: 10px;
 }
