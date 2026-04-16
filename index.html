@@ -1,57 +1,40 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Streitschlichter</title>
-
-<link rel="stylesheet" href="style.css">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#000000">
-
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-
-</head>
-
 <body>
 
 <h1>Streitschlichter</h1>
 
-<div class="tabs">
-<button onclick="show('home')">Info</button>
-<button onclick="show('photos')">Fotos</button>
-<button onclick="show('termin')">Termin</button>
+<div class="container">
+
+  <div class="card">
+    <button class="primary" onclick="show('home')">Info</button>
+    <button class="secondary" onclick="show('photos')">Fotos</button>
+    <button class="secondary" onclick="show('termin')">Termin</button>
+  </div>
+
+  <div id="home" class="card">
+    <p>Hier helfen wir bei Konflikten.</p>
+    <p><b>Raum 008</b></p>
+  </div>
+
+  <div id="photos" class="card hidden">
+    <div style="height:120px;background:#ddd;border-radius:10px;margin-bottom:10px;"></div>
+    <div style="height:120px;background:#ddd;border-radius:10px;"></div>
+  </div>
+
+  <div id="termin" class="card hidden">
+
+    <input id="name" placeholder="Name">
+    <input id="klasse" placeholder="Klasse">
+    <input type="date" id="date">
+
+    <select id="pause">
+      <option>1. Pause</option>
+      <option>2. Pause</option>
+    </select>
+
+    <button class="primary" onclick="save()">Termin buchen</button>
+
+  </div>
+
 </div>
 
-<section id="home">
-<p>Hier helfen wir bei Konflikten.</p>
-<p><b>Ort:</b> Raum 008</p>
-</section>
-
-<section id="photos" class="hidden">
-<div class="photo"></div>
-<div class="photo"></div>
-</section>
-
-<section id="termin" class="hidden">
-
-<input id="name" placeholder="Name">
-<input id="klasse" placeholder="Klasse">
-<input type="date" id="date">
-
-<select id="pause">
-<option>1. Pause</option>
-<option>2. Pause</option>
-</select>
-
-<button onclick="save()">Termin buchen</button>
-
-</section>
-
-<script src="firebase.js"></script>
-<script src="app.js"></script>
-
 </body>
-</html>
