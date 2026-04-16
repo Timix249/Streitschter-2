@@ -1,1 +1,7 @@
-self.addEventListener('install',e=>{console.log('installed')});
+self.addEventListener("install", e => {
+  e.waitUntil(
+    caches.open("app").then(cache => {
+      return cache.addAll(["./"]);
+    })
+  );
+});
