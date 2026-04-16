@@ -75,3 +75,17 @@ function renderCalendar(events){
 
   calendar.render();
 }
+function loginGoogle(){
+
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  auth.signInWithPopup(provider)
+  .then(()=>{
+    document.getElementById("loginBox").style.display = "none";
+    document.getElementById("setPinBox").classList.remove("hidden");
+  })
+  .catch(error=>{
+    alert("Google Login Fehler");
+    console.log(error);
+  });
+}
