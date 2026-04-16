@@ -1,1 +1,27 @@
-body{font-family:-apple-system;background:#f2f2f7;text-align:center;}
+body {
+  font-family: -apple-system;
+  background: #f2f2f7;
+  text-align: center;
+}
+
+.tabs button {
+  padding: 10px;
+  margin: 5px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+}
+
+.hidden { display:none; }
+
+.photo {
+  height: 200px;
+  border: 2px dashed black;
+  margin: 20px;
+}
+
+input, select, button {
+  width: 90%;
+  padding: 10px;
+  margin: 10px;
+}
